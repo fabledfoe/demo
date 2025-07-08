@@ -9,6 +9,7 @@
 
 const express = require('express');
 const http = require('http');
+const cors = require('cors');
 const { ApolloServer } = require('@apollo/server');
 const { expressMiddleware } = require('@apollo/server/express4');
 const { ApolloServerPluginDrainHttpServer } = require('@apollo/server/plugin/drainHttpServer');
@@ -203,6 +204,7 @@ async function startServer() {
     app.use(
         '/',
         express.json(),
+        cors(), // Enable CORS for all routes.
         // expressMiddleware integrates the Apollo Server with the Express app.
         expressMiddleware(server, {
             context: async () => ({ db }), // Pass the database connection to all resolvers.
