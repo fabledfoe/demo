@@ -1,4 +1,7 @@
 {
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "scripts": {
     "test": "mocha",
     "start": "node server.js"

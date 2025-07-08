@@ -1,3 +1,5 @@
+Requires Node version >= 20.
+
 Install via "npm install".
 
 Run GraphQL server via "npm run start".
